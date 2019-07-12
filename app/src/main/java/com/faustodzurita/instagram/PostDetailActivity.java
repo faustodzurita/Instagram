@@ -11,6 +11,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
+import com.faustodzurita.instagram.models.Post;
 import com.parse.ParseException;
 import com.parse.ParseFile;
 import com.parse.ParseUser;
@@ -39,17 +41,17 @@ public class PostDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_detail);
 
-        usernameText = findViewById(R.id.post_detail_username_tv);
-        postProfileImageView = findViewById(R.id.post_detail_profile_image_view);
-        postImageView = findViewById(R.id.post_detail_image_view);
-        postDescriptionText = findViewById(R.id.post_detail_description_tv);
-        postTimestampText = findViewById(R.id.post_detail_timestamp_tv);
-        postLikeIcon = findViewById(R.id.post_detail_like_icon);
-        postLikeCounter = findViewById(R.id.post_detail_like_counter_tv);
-        postCommentIcon = findViewById(R.id.post_detail_comment_icon);
-        postCommentText = findViewById(R.id.post_detail_comments_tv);
-        postCommentInput = findViewById(R.id.post_detail_comment_et);
-        postCommentButton = findViewById(R.id.post_detail_comment_btn);
+        usernameText = findViewById(R.id.activity_post_detail_username_text);
+        postProfileImageView = findViewById(R.id.activity_post_detail_profile_image);
+        postImageView = findViewById(R.id.activity_post_detail_post_image);
+        postDescriptionText = findViewById(R.id.activity_post_detail_post_description_text);
+        postTimestampText = findViewById(R.id.activity_post_detail_timestamp_text);
+        postLikeIcon = findViewById(R.id.activity_post_detail_like_icon);
+        postLikeCounter = findViewById(R.id.activity_post_detail_like_counter_text);
+        postCommentIcon = findViewById(R.id.activity_post_detail_comment_icon);
+        postCommentText = findViewById(R.id.activity_post_detail_comments_text);
+        postCommentInput = findViewById(R.id.activity_post_detail_comment_textfield);
+        postCommentButton = findViewById(R.id.activity_post_detail_comment_submit_button);
 
         post = Parcels.unwrap(getIntent().getParcelableExtra("post"));
 
@@ -57,7 +59,7 @@ public class PostDetailActivity extends AppCompatActivity {
 
         ParseFile profileImage = post.getUser().getParseFile("profile");
         if (profileImage != null) {
-            Glide.with(this).load(profileImage.getUrl()).into(postProfileImageView);
+            Glide.with(this).load(profileImage.getUrl()).apply(RequestOptions.circleCropTransform()).into(postProfileImageView);
         }
 
         ParseFile image = post.getImage();
@@ -135,6 +137,7 @@ public class PostDetailActivity extends AppCompatActivity {
                             Log.d("PostDetailActivity","Saving comment successful.");
 
                             postCommentText.setText(generateCommentString(post.getComments()));
+                            postCommentInput.setText("");
                         } else {
                             Log.e("PostDetailActivity", "Saving comment failure.");
                             e.printStackTrace();

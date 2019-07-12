@@ -27,12 +27,12 @@ public class SignupActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
-        usernameInput = findViewById(R.id.signup_username_et);
-        passwordInput = findViewById(R.id.signup_password_et);
-        passwordConfirmInput = findViewById(R.id.signup_password_confirm_et);
-        emailInput = findViewById(R.id.signup_email_et);
-        phoneInput = findViewById(R.id.signup_phone_et);
-        signupButton = findViewById(R.id.signup_signup_btn);
+        usernameInput = findViewById(R.id.activity_signup_username_textfield);
+        passwordInput = findViewById(R.id.activity_signup_password_textfield);
+        passwordConfirmInput = findViewById(R.id.activity_signup_password_confirm_textfield);
+        emailInput = findViewById(R.id.activity_signup_email_textfield);
+        phoneInput = findViewById(R.id.activity_signup_phone_textfield);
+        signupButton = findViewById(R.id.activity_signup_signup_button);
 
         signupButton.setOnClickListener(new View.OnClickListener() {
             @Override

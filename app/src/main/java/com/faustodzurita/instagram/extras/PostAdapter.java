@@ -1,4 +1,4 @@
-package com.faustodzurita.instagram;
+package com.faustodzurita.instagram.extras;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,6 +12,11 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
+import com.faustodzurita.instagram.PostDetailActivity;
+import com.faustodzurita.instagram.R;
+import com.faustodzurita.instagram.UserDetailActivity;
+import com.faustodzurita.instagram.models.Post;
 import com.parse.ParseFile;
 import com.parse.ParseUser;
 
@@ -66,11 +71,11 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
         public ViewHolder(View itemView) {
             super(itemView);
 
-            usernameText = itemView.findViewById(R.id.post_username_tv);
-            postProfileImageView = itemView.findViewById(R.id.post_profile_image_view);
-            postImageView = itemView.findViewById(R.id.post_image_view);
-            postDescriptionText = itemView.findViewById(R.id.post_description_tv);
-            postTimestampText = itemView.findViewById(R.id.post_timestamp_tv);
+            usernameText = itemView.findViewById(R.id.item_post_username_text);
+            postProfileImageView = itemView.findViewById(R.id.item_post_profile_image);
+            postImageView = itemView.findViewById(R.id.item_post_image);
+            postDescriptionText = itemView.findViewById(R.id.item_post_description_text);
+            postTimestampText = itemView.findViewById(R.id.item_post_timestamp_text);
 
             itemView.setOnClickListener(this);
 
@@ -106,7 +111,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
 
             ParseFile profileImage = post.getUser().getParseFile("profile");
             if (profileImage != null) {
-                Glide.with(context).load(profileImage.getUrl()).into(postProfileImageView);
+                Glide.with(context).load(profileImage.getUrl()).apply(RequestOptions.circleCropTransform()).into(postProfileImageView);
             }
 
             ParseFile postImage = post.getImage();

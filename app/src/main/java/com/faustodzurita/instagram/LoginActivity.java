@@ -31,10 +31,10 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         } else {
-            usernameInput = findViewById(R.id.login_username_et);
-            passwordInput = findViewById(R.id.login_password_et);
-            loginButton = findViewById(R.id.login_login_btn);
-            signupButton = findViewById(R.id.login_signup_btn);
+            usernameInput = findViewById(R.id.activity_login_username_textfield);
+            passwordInput = findViewById(R.id.activity_login_password_textfield);
+            loginButton = findViewById(R.id.activity_login_login_button);
+            signupButton = findViewById(R.id.activity_login_signup_button);
 
             loginButton.setOnClickListener(new View.OnClickListener() {
                 @Override

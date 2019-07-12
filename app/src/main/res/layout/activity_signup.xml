@@ -6,23 +6,35 @@
     android:layout_height="match_parent"
     tools:context=".SignupActivity">
 
+    <ImageView
+        android:id="@+id/activity_signup_person_icon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_person_add_black_24dp" />
+
     <EditText
-        android:id="@+id/signup_username_et"
-        android:layout_width="300dp"
+        android:id="@+id/activity_signup_username_textfield"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
         android:hint="Username"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/activity_signup_person_icon" />
 
     <EditText
-        android:id="@+id/signup_password_et"
-        android:layout_width="300dp"
+        android:id="@+id/activity_signup_password_textfield"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
@@ -31,13 +43,26 @@
         android:hint="Password"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signup_username_et" />
+        app:layout_constraintTop_toBottomOf="@+id/activity_signup_username_textfield" />
 
     <EditText
-        android:id="@+id/signup_email_et"
-        android:layout_width="300dp"
+        android:id="@+id/activity_signup_password_confirm_textfield"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="Password (Confirm)"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activity_signup_password_textfield" />
+
+    <EditText
+        android:id="@+id/activity_signup_email_textfield"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
@@ -47,11 +72,11 @@
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signup_password_confirm_et" />
+        app:layout_constraintTop_toBottomOf="@+id/activity_signup_password_confirm_textfield" />
 
     <EditText
-        android:id="@+id/signup_phone_et"
-        android:layout_width="300dp"
+        android:id="@+id/activity_signup_phone_textfield"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
@@ -61,32 +86,21 @@
         android:inputType="phone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signup_email_et" />
-
-    <EditText
-        android:id="@+id/signup_password_confirm_et"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="8dp"
-        android:ems="10"
-        android:hint="Confirm Password"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signup_password_et" />
+        app:layout_constraintTop_toBottomOf="@+id/activity_signup_email_textfield" />
 
     <Button
-        android:id="@+id/signup_signup_btn"
-        android:layout_width="300dp"
+        android:id="@+id/activity_signup_signup_button"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="8dp"
-        android:background="@color/blue_4"
-        android:text="SIGN UP"
+        android:background="#3897f0"
+        android:text="Sign Up"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signup_phone_et" />
+        app:layout_constraintTop_toBottomOf="@+id/activity_signup_phone_textfield" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

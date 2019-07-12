@@ -10,6 +10,9 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
+import com.faustodzurita.instagram.extras.PostAdapter;
+import com.faustodzurita.instagram.models.Post;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseFile;
@@ -33,9 +36,9 @@ public class UserDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_detail);
 
-        userProfileImageView = findViewById(R.id.user_detail_profile_image_view);
-        userUsernameText = findViewById(R.id.user_detail_username_et);
-        userTimelineView = findViewById(R.id.user_detail_timeline_rv);
+        userProfileImageView = findViewById(R.id.activity_user_detail_profile_image);
+        userUsernameText = findViewById(R.id.activity_user_detail_username_text);
+        userTimelineView = findViewById(R.id.activity_user_detail_timeline);
 
         ParseUser user = Parcels.unwrap(getIntent().getParcelableExtra("user"));
 
@@ -43,7 +46,7 @@ public class UserDetailActivity extends AppCompatActivity {
 
         ParseFile profileImage = user.getParseFile("profile");
         if (profileImage != null) {
-            Glide.with(this).load(profileImage.getUrl()).into(userProfileImageView);
+            Glide.with(this).load(profileImage.getUrl()).apply(RequestOptions.circleCropTransform()).into(userProfileImageView);
         }
 
         posts = new ArrayList<>();
@@ -52,7 +55,7 @@ public class UserDetailActivity extends AppCompatActivity {
 
         userTimelineView.setAdapter(adapter);
 
-        userTimelineView.setLayoutManager(new GridLayoutManager(this, 3));
+        userTimelineView.setLayoutManager(new GridLayoutManager(this, 2));
 
         queryPosts(user);
     }

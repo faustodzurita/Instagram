@@ -6,33 +6,33 @@
     android:layout_height="match_parent"
     tools:context=".UserDetailActivity">
 
-    <TextView
-        android:id="@+id/user_detail_username_et"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:text="Username"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/user_detail_timeline_rv"
-        app:layout_constraintStart_toEndOf="@+id/user_detail_profile_image_view"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ImageView
-        android:id="@+id/user_detail_profile_image_view"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:id="@+id/activity_user_detail_profile_image"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars[9]" />
+        tools:srcCompat="@tools:sample/avatars[0]" />
+
+    <TextView
+        android:id="@+id/activity_user_detail_username_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="30dp"
+        android:text="Username"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/activity_user_detail_profile_image"
+        app:layout_constraintStart_toEndOf="@+id/activity_user_detail_profile_image"
+        app:layout_constraintTop_toTopOf="@+id/activity_user_detail_profile_image" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/user_detail_timeline_rv"
+        android:id="@+id/activity_user_detail_timeline"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user_detail_profile_image_view" />
+        app:layout_constraintTop_toBottomOf="@+id/activity_user_detail_profile_image" />
 </androidx.constraintlayout.widget.ConstraintLayout>

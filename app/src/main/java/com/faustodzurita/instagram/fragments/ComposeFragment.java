@@ -22,7 +22,7 @@ import androidx.annotation.Nullable;
 import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 
-import com.faustodzurita.instagram.Post;
+import com.faustodzurita.instagram.models.Post;
 import com.faustodzurita.instagram.R;
 import com.parse.ParseException;
 import com.parse.ParseFile;
@@ -51,11 +51,11 @@ public class ComposeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        postDescriptionInput = view.findViewById(R.id.home_post_description_et);
-        takePhotoButton = view.findViewById(R.id.home_take_photo_btn);
-        postImageView = view.findViewById(R.id.home_post_view);
-        postPhotoButton = view.findViewById(R.id.home_post_photo_btn);
-        postProgressBar = view.findViewById(R.id.home_progress_bar);
+        postDescriptionInput = view.findViewById(R.id.fragment_compose_post_description_textfield);
+        takePhotoButton = view.findViewById(R.id.fragment_compose_take_photo_button);
+        postImageView = view.findViewById(R.id.fragment_compose_post_preview);
+        postPhotoButton = view.findViewById(R.id.fragment_compose_post_photo_button);
+        postProgressBar = view.findViewById(R.id.fragment_compose_progress_bar);
 
         takePhotoButton.setOnClickListener(new View.OnClickListener() {
             @Override

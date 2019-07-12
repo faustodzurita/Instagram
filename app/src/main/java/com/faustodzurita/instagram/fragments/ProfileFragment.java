@@ -20,8 +20,8 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.faustodzurita.instagram.LoginActivity;
-import com.faustodzurita.instagram.Post;
-import com.faustodzurita.instagram.PostAdapter;
+import com.faustodzurita.instagram.models.Post;
+import com.faustodzurita.instagram.extras.PostAdapter;
 import com.faustodzurita.instagram.R;
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -54,9 +54,9 @@ public class ProfileFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        changePhotoButton = view.findViewById(R.id.profile_change_photo_btn);
-        timelineView = view.findViewById(R.id.profile_timeline_rv);
-        logoutButton = view.findViewById(R.id.profile_logout_btn);
+        changePhotoButton = view.findViewById(R.id.fragment_profile_change_profile_button);
+        timelineView = view.findViewById(R.id.fragment_profile_timeline);
+        logoutButton = view.findViewById(R.id.fragment_profile_logout_button);
 
         changePhotoButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,7 +71,7 @@ public class ProfileFragment extends Fragment {
 
         timelineView.setAdapter(adapter);
 
-        timelineView.setLayoutManager(new GridLayoutManager(getContext(), 3));
+        timelineView.setLayoutManager(new GridLayoutManager(getContext(), 2));
 
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override

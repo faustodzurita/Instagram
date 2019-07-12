@@ -1,11 +1,12 @@
-package com.faustodzurita.instagram;
+package com.faustodzurita.instagram.extras;
 
 import android.app.Application;
 
+import com.faustodzurita.instagram.models.Post;
 import com.parse.Parse;
 import com.parse.ParseObject;
 
-public class ParseApp extends Application {
+public class ParseApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();

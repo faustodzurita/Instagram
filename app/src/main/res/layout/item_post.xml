@@ -5,53 +5,72 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+    <ImageView
+        android:id="@+id/item_post_profile_image"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars[0]" />
+
     <TextView
-        android:id="@+id/post_username_tv"
+        android:id="@+id/item_post_username_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="30dp"
         android:text="Username"
+        android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/post_image_view"
-        app:layout_constraintStart_toEndOf="@+id/post_profile_image_view"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/item_post_profile_image"
+        app:layout_constraintStart_toEndOf="@+id/item_post_profile_image"
+        app:layout_constraintTop_toTopOf="@+id/item_post_profile_image" />
 
     <ImageView
-        android:id="@+id/post_image_view"
+        android:id="@+id/item_post_image"
         android:layout_width="wrap_content"
-        android:layout_height="350dp"
+        android:layout_height="450dp"
         android:layout_marginTop="5dp"
-        android:scaleType="fitXY"
+        android:scaleType="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/post_profile_image_view"
-        tools:srcCompat="@tools:sample/backgrounds/scenic[10]" />
+        app:layout_constraintTop_toBottomOf="@+id/item_post_profile_image"
+        tools:srcCompat="@tools:sample/backgrounds/scenic[0]" />
 
     <TextView
-        android:id="@+id/post_description_tv"
-        android:layout_width="wrap_content"
+        android:id="@+id/item_post_description_text"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
         android:layout_marginTop="5dp"
         android:text="Description"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/post_image_view" />
+        app:layout_constraintTop_toBottomOf="@+id/item_post_image"
+        app:layout_constraintWidth_max="300dp" />
 
     <TextView
-        android:id="@+id/post_timestamp_tv"
+        android:id="@+id/item_post_timestamp_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
         android:text="Timestamp"
         android:textStyle="italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/post_image_view" />
+        app:layout_constraintBottom_toTopOf="@+id/item_post_image"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageView
-        android:id="@+id/post_profile_image_view"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:id="@+id/item_post_end_bar"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars[3]" />
+        app:layout_constraintTop_toBottomOf="@+id/item_post_description_text"
+        app:srcCompat="@color/zero_rating_video_settings_drawer_unchecked_border_color" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

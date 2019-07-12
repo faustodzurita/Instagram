@@ -1,4 +1,4 @@
-package com.faustodzurita.instagram;
+package com.faustodzurita.instagram.models;
 
 import android.text.format.DateUtils;
 

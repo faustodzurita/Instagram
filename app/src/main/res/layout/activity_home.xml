@@ -7,19 +7,44 @@
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
 
-    <FrameLayout
-        android:id="@+id/home_fragment_frame"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/home_bottom_navigation"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/activity_home_toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#F5F5F5"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/activity_home_instagram_logo"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/activity_home_toolbar"
+        app:layout_constraintEnd_toEndOf="@+id/activity_home_toolbar"
+        app:layout_constraintStart_toStartOf="@+id/activity_home_toolbar"
+        app:layout_constraintTop_toTopOf="@+id/activity_home_toolbar"
+        app:srcCompat="@drawable/nav_logo_whiteout" />
+
+    <FrameLayout
+        android:id="@+id/activity_home_fragment_frame"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/activity_home_bottom_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activity_home_toolbar" />
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/home_bottom_navigation"
-        android:layout_width="match_parent"
+        android:id="@+id/activity_home_bottom_navigation"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="#F5F5F5"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/menu_bottom_navigation" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

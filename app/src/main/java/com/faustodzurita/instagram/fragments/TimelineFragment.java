@@ -13,9 +13,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-import com.faustodzurita.instagram.EndlessRecyclerViewScrollListener;
-import com.faustodzurita.instagram.Post;
-import com.faustodzurita.instagram.PostAdapter;
+import com.faustodzurita.instagram.extras.EndlessRecyclerViewScrollListener;
+import com.faustodzurita.instagram.models.Post;
+import com.faustodzurita.instagram.extras.PostAdapter;
 import com.faustodzurita.instagram.R;
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -41,8 +41,8 @@ public class TimelineFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        timelineSwipeFrame = view.findViewById(R.id.home_timeline_swipe_frame);
-        timelineView = view.findViewById(R.id.home_timeline_rv);
+        timelineSwipeFrame = view.findViewById(R.id.fragment_timeline_swipe_frame);
+        timelineView = view.findViewById(R.id.fragment_timeline);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
 

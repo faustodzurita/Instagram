@@ -10,9 +10,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import com.faustodzurita.instagram.fragments.ComposeFragment;
-import com.faustodzurita.instagram.fragments.NotificationFragment;
 import com.faustodzurita.instagram.fragments.ProfileFragment;
-import com.faustodzurita.instagram.fragments.SearchFragment;
 import com.faustodzurita.instagram.fragments.TimelineFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -28,8 +26,8 @@ public class HomeActivity extends AppCompatActivity {
 
         fragmentManager = getSupportFragmentManager();
 
-        fragmentFrame = findViewById(R.id.home_fragment_frame);
-        bottomNavigationButtonGroup = findViewById(R.id.home_bottom_navigation);
+        fragmentFrame = findViewById(R.id.activity_home_fragment_frame);
+        bottomNavigationButtonGroup = findViewById(R.id.activity_home_bottom_navigation);
 
         bottomNavigationButtonGroup.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -40,21 +38,15 @@ public class HomeActivity extends AppCompatActivity {
                     case R.id.action_timeline:
                         fragment = new TimelineFragment();
                         break;
-                    case R.id.action_search:
-                        fragment = new SearchFragment();
-                        break;
                     case R.id.action_compose:
                         fragment = new ComposeFragment();
-                        break;
-                    case R.id.action_notifications:
-                        fragment = new NotificationFragment();
                         break;
                     default:
                         fragment = new ProfileFragment();
                         break;
                 }
 
-                fragmentManager.beginTransaction().replace(R.id.home_fragment_frame, fragment).commit();
+                fragmentManager.beginTransaction().replace(R.id.activity_home_fragment_frame, fragment).commit();
 
                 return true;
             }

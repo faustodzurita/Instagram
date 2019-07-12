@@ -1,4 +1,4 @@
-package com.faustodzurita.instagram;
+package com.faustodzurita.instagram.extras;
 
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
