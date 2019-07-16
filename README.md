@@ -61,7 +61,43 @@ List an 3rd party libraries, icons, graphics, or other assets you used in your a
 
 ## Notes
 
-Yassir: Created all activities, models, and layout files.
+- HomeActivity.java: implemented bottom navigation buttons with fragment views and a switch statement.
+
+- LoginActivity.java: implemented a check to see if a session already exists or a login is required, used
+listeners to validate login or launch the signup activity with an intent.
+
+- PostDetailActivity.java: implemented a display of all the details of a post given its ID, used parcels
+to obtain the post ID of the post that should be rendered, used Glide to render images, **implemented logic
+to like and unlike an image storing that data both locally and on the remote database**, implemented logic
+to comment on an image using textfield and button with listener that updates an array.
+
+- SignupActivity.java: implemented a sign-up activity that stores data remotely using Parse, experimented with
+textfield types such as password and phone number.
+
+- UserDetailActivtiy.java: implemented a grid layout that displays all of the posts of a user using a
+grid layout manager and a recycler view, used ParseQuery to query posts with specific constraints such as
+only 20 posts and specifically from the user, logged errors.
+
+- Post.java: created a Post model that interacts with the Parse API to get data, wrote method to convert
+date formats from one form to another.
+
+- ComposeFragment.java: implemented buttons with listeners to capture and post an image, used intents and activity
+methods to launch the camera and preview the photo before posting in a box.
+
+- ProfileFragment.java: implemented a grid layout that displays all of the posts of a user using a
+grid layout manager and a recycler view, used ParseQuery to query posts with specific constraints such as
+only 20 posts and specifically from the user, logged errors, implemented button to log out out of a session,
+implemented button to change profile photo using built-in camera.
+
+- TimelineFragment.java: implemented a timeline of posts with refresh swipe gesture and scroll listeners,
+implemented logic to fetch new data from Parse upon reaching end of a set of posts using loadNextData method.
+
+- EndlessRecyclerViewScrollListener.java: This was copied from online.
+
+- ParseApplication.java: configured Parse to work sending a key.
+
+- PostAdapter.java: implemented a Post adapter to bind post data to post views, used parcels and intents
+to make each post clickable.
 
 ## License
 
